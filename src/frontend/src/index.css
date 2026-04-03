@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 300 700;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 300 900;
+}
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+
+    /* Pawsport Palette — warm cream / navy / orange
+       Page bg cream: #F6F0E6 → oklch(0.95 0.018 80)
+       Primary text navy: #0F2533 → oklch(0.22 0.045 229)
+       Secondary text: #5D6B75 → oklch(0.52 0.025 229)
+       Hero pale blue: #DCEAF6 → oklch(0.91 0.032 229)
+       Card bg: #FBF7EF → oklch(0.98 0.010 80)
+       Card border: #E7DED2 → oklch(0.90 0.018 72)
+       Primary accent orange: #D88455 → oklch(0.68 0.13 48)
+       Dark button: #153244 → oklch(0.27 0.052 229)
+    */
+
+    --background: 0.95 0.018 80;
+    --foreground: 0.22 0.045 229;
+    --card: 0.98 0.01 80;
+    --card-foreground: 0.22 0.045 229;
+    --popover: 0.98 0.01 80;
+    --popover-foreground: 0.22 0.045 229;
+    --primary: 0.68 0.13 48;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.91 0.032 229;
+    --secondary-foreground: 0.22 0.045 229;
+    --muted: 0.93 0.015 80;
+    --muted-foreground: 0.52 0.025 229;
+    --accent: 0.68 0.13 48;
+    --accent-foreground: 1 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1 0 0;
+    --border: 0.9 0.018 72;
+    --input: 0.9 0.018 72;
+    --ring: 0.68 0.13 48;
+
+    /* Custom tokens */
+    --navy: 0.22 0.045 229;
+    --dark-navy: 0.18 0.042 229;
+    --pale-blue: 0.91 0.032 229;
+    --cream: 0.95 0.018 80;
+    --card-bg: 0.98 0.01 80;
+    --orange: 0.68 0.13 48;
+    --dark-btn: 0.27 0.052 229;
+    --health-green: 0.65 0.14 143;
+    --health-yellow: 0.82 0.14 83;
+    --health-red: 0.577 0.245 27.325;
+    --warm-border: 0.9 0.018 72;
+
+    --chart-1: 0.68 0.13 48;
+    --chart-2: 0.65 0.14 143;
+    --chart-3: 0.62 0.19 259;
+    --chart-4: 0.82 0.14 83;
+    --chart-5: 0.577 0.245 27.325;
+
+    --sidebar: 0.98 0.01 80;
+    --sidebar-foreground: 0.22 0.045 229;
+    --sidebar-primary: 0.68 0.13 48;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.93 0.015 80;
+    --sidebar-accent-foreground: 0.22 0.045 229;
+    --sidebar-border: 0.9 0.018 72;
+    --sidebar-ring: 0.68 0.13 48;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .bg-navy {
+    background-color: oklch(var(--navy));
+  }
+  .bg-dark-navy {
+    background-color: oklch(var(--dark-navy));
+  }
+  .bg-pale-blue {
+    background-color: oklch(var(--pale-blue));
+  }
+  .bg-cream {
+    background-color: oklch(var(--cream));
+  }
+  .bg-card-bg {
+    background-color: oklch(var(--card-bg));
+  }
+  .bg-orange {
+    background-color: oklch(var(--orange));
+  }
+  .bg-dark-btn {
+    background-color: oklch(var(--dark-btn));
+  }
+  .text-navy {
+    color: oklch(var(--navy));
+  }
+  .text-orange {
+    color: oklch(var(--orange));
+  }
+  .text-dark-btn {
+    color: oklch(var(--dark-btn));
+  }
+  .border-warm {
+    border-color: oklch(var(--warm-border));
+  }
+  .bg-health-green {
+    background-color: oklch(var(--health-green));
+  }
+  .text-health-green {
+    color: oklch(var(--health-green));
+  }
+  .bg-health-yellow {
+    background-color: oklch(var(--health-yellow));
+  }
+  .text-health-yellow {
+    color: oklch(var(--health-yellow));
+  }
+  .bg-health-red {
+    background-color: oklch(var(--health-red));
+  }
+  .text-health-red {
+    color: oklch(var(--health-red));
+  }
+
+  .shadow-card {
+    box-shadow: 0 1px 3px 0 rgba(15, 37, 51, 0.06), 0 4px 16px 0
+      rgba(15, 37, 51, 0.04);
+  }
+  .shadow-card-hover {
+    box-shadow: 0 4px 12px 0 rgba(15, 37, 51, 0.1), 0 8px 28px 0
+      rgba(15, 37, 51, 0.06);
+  }
+  .shadow-warm {
+    box-shadow: 0 2px 8px 0 rgba(216, 132, 85, 0.12), 0 4px 16px 0
+      rgba(216, 132, 85, 0.08);
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+  }
+}
